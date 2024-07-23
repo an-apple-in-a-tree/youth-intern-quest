@@ -12,19 +12,20 @@ export default async function Page() {
     }
 
     return (
-        <div>
+        <>
             <h1>The Internship Vault</h1>
-            <section className="w-3/4 px-4">
+
+            <section className="grid grid-cols-3">
                 {internships && internships.length > 0 ? (
                     <ul className=" pl-5 space-y-4">
                         {internships.map((internship) => (
-                            <Internship key={internship.id} internship={internship} />
+                            <Internship key={internship.id} internship={internship}/>
                         ))}
                     </ul>
                 ) : (
                     <p>No internships available.</p>
                 )}
             </section>
-        </div>
+        </>
     );
 }
