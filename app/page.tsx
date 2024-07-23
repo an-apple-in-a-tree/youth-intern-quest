@@ -14,31 +14,35 @@ export default async function Index() {
   const isSupabaseConnected = canInitSupabaseClient();
 
   return (
-    <div className="flex-1 w-full flex flex-col gap-20 items-center">
-      <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-        <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
-
-        </div>
-      </nav>
-
-      <div className="flex-1 flex flex-col gap-20 max-w-4xl px-3">
-        <h1>Landing Page</h1>
-
+      <div>
+          <header className="w-screen font-bold bg-header h-screen flex flex-col justify-center items-center">
+              <h1 className="text-white text-center text-8xl">YIQ</h1>
+              <p className="open-sans text-white text-center text-xl">
+                  The ultimate platform for students to find internships and jobs for highschoolers.
+              </p>
+          </header>
+          <section className = "p-8">
+              <div className="flex flex-row w-full gap-8 py-12 px-12">
+                  <div className="my-auto text-xl pr-8">
+                      <p className = "py-8">
+                          Are you a student seeking an internship?
+                          Your search ends here! We offer a comprehensive vault of diverse opportunities just for you.
+                          Whether you're looking to gain hands-on experience, develop new skills,
+                          or kickstart your career, we have the perfect internships to match your aspirations.
+                          Dive into our extensive database and discover your next career step today.
+                      </p>
+                      <button
+                          className="text-center bg-green-400 hover:bg-blue-700 text-white font-bold py-4 px-4 rounded-lg">
+                          <a href="/pages/internship-vault">
+                              <h2>Click to Enter the Vault</h2>
+                          </a>
+                      </button>
+                  </div>
+                  <img
+                      className = "w-3/4"
+                      src="https://tse2.mm.bing.net/th?id=OIG3.bfVQ3bipY6BtX.IdbtmA&w=270&h=270&c=6&r=0&o=5&dpr=2&pid=ImgGn"/>
+              </div>
+          </section>
       </div>
-
-      <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs">
-        <p>
-          Powered by{" "}
-          <a
-            href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-            target="_blank"
-            className="font-bold hover:underline"
-            rel="noreferrer"
-          >
-            Supabase
-          </a>
-        </p>
-      </footer>
-    </div>
   );
 }
