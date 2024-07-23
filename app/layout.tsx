@@ -1,8 +1,9 @@
-import { GeistSans } from "geist/font/sans";
-import "./globals.css";
 import { ChakraProvider } from '@chakra-ui/react'
 import Navbar from "@/components/Navbar";
+import Header from "@/components/Header";
+import "./globals.css";
 import {createClient} from "@/utils/supabase/server";
+
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -24,10 +25,11 @@ export default async function RootLayout({
         data: { user },
     } = await supabase.auth.getUser();
   return (
-    <html lang="en" className={GeistSans.className}>
-      <body className="bg-background text-foreground">
-      <ChakraProvider>
-          {user && <Navbar />}
+    <html lang="en">
+    <body className="bg-background text-foreground">
+    <ChakraProvider>
+        <Header/>
+        {user && <Navbar/>}
         <main className="min-h-screen flex flex-col items-center">
           {children}
         </main>
